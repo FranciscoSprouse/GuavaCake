@@ -1,4 +1,10 @@
 package com.guava.guavacake.features.driver
 
-class DriverFragment {
+import androidx.fragment.app.Fragment
+import javax.inject.Inject
+
+class DriverFragment: Fragment() {
+
+    @Inject
+    lateinit var viewModel: DriverViewModel
 }
