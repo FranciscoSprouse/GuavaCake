@@ -1,6 +1,5 @@
 package com.guava.guavacake.network
 
-import android.util.Log
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.Response
@@ -9,7 +8,6 @@ import okhttp3.ResponseBody.Companion.toResponseBody
 class MockInterceptor: Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val uri: String = chain.request().url.toUri().toString()
-        Log.d("paco", "intercepted")
 
         val responseString: String = when {
             uri.endsWith("drivers") -> DRIVER_RESPONSE
