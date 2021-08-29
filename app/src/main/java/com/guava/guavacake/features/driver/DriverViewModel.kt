@@ -14,7 +14,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DriverViewModel @Inject constructor(val repository: GuavaRepository): ViewModel() {
-
     init {
         getDrivers()
     }
@@ -22,10 +21,14 @@ class DriverViewModel @Inject constructor(val repository: GuavaRepository): View
     fun getDrivers() {
         viewModelScope.launch(Dispatchers.IO) {
             repository.getDrivers().catch {
-
+                Log.e(TAG, it.message.toString())
             }.collect {
-                Log.d("test", it.toString())
+                Log.d(TAG, it.toString())
             }
         }
+    }
+
+    companion object {
+        const val TAG = "DriverViewModel"
     }
 }

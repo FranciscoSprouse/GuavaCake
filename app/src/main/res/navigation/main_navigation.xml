@@ -12,5 +12,4 @@
         android:name="com.guava.guavacake.features.driver.DriverFragment"
         tools:layout="@layout/fragment_driver">
     </fragment>
-
 </navigation>
